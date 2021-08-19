@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lunar OS</title>
+  <link rel="shortcut icon" href="fav.png" type="image/x-icon"> 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root {
+    --color: #ffffff;
+    --font-color: #000000;
+  }
+  body {
+    background-image: url("bg.png");
+    background-size: cover;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+  }
+  * { cursor: url(cursor.png), default; }
+  .info {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 7px;
+    position: absolute;
+    color: white;
+  }
+  .taskbar {
+    background: rgba(0,0,0, 0.2);
+    border-radius: 25px;
+    padding: 7px;
+    position: absolute;
+  }
+
+.dropbtn {
+  background-image: url("doggle.png");
+  color: white;
+  padding: 30px;
+  border: none;
+  border-radius: 20px;
+  opacity: 100%;
+}
+
+.dropup {
+  position: relative;
+  display: inline-block;
+  opacity: 100%;
+}
+
+.dropup-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  z-index: 1;
+  border-radius: 10px;
+  border: none;
+  opacity: 100%;
+}
+
+.dropup-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  opacity: 100%;
+}
+
+.dropup:hover .dropup-content {
+  display: block;
+  opacity: 100%;
+}
+.browserbtn {
+  background-image: url("browser.png");
+  color: white;
+  padding: 30px;
+  border: none;
+  border-radius: 20px;
+  opacity: 100%;
+}
+
+.browser {
+  position: relative;
+  display: inline-block;
+  opacity: 100%;
+}
+
+.browsercont {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  z-index: 1;
+  border-radius: 10px;
+  border: none;
+  opacity: 100%;
+}
+
+.browsercont a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  opacity: 100%;
+}
+
+.browser:hover .browsercont {
+  display: block;
+  opacity: 100%;
+}
+
+.settingsbtn {
+  background-image: url("settings.png");
+  color: white;
+  padding: 30px;
+  border: none;
+  border-radius: 20px;
+  opacity: 100%;
+  max-height: 500px;
+}
+
+.settings {
+  position: relative;
+  display: inline-block;
+  opacity: 100%;
+}
+
+.settingsmenu {
+  font-family: 'Poppins', sans-serif;
+  display: none;
+  position: absolute;
+  background-color: var(--color);
+  min-width: 500px;
+  min-height: 500px;
+  z-index: 1;
+  text-align: center;
+  border-radius: 10px;
+  opacity: 100%;
+  color: var(--font-color)
+}
+.settingsmenu p {
+  font-size: 30px;
+  opacity: 100%;
+}
+
+.settingsmenu b {
+  font-family: 'Poppins', sans-serif;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  opacity: 100%;
+}
+
+.settings:hover .settingsmenu {
+  display: block;
+  opacity: 100%;
+}
+input {
+  border: none;
+}
+
+</style>
+</head>
+<body>
+  <div class="info">
+    <body onload="startTime()">
+    <div id="txt">
+    </div>
+  </div>
+  <br>
+  <br>
+  <div class="taskbar">
+    <div class="dropup">
+      <button class="dropbtn"> </button>
+      <div class="dropup-content">
+        <iframe src="art.html" width="500" height="500"heigh></iframe>
+  </div>
+    <div class="browser">
+  <button class="browserbtn"> </button>
+  <div class="browsercont">
+      <iframe src="https://www.google.com/webhp?igu=1" width="500" height="500"heigh></iframe>
+  </div>
+    <div class="settings">
+  <button class="settingsbtn"> </button>
+  <div class="settingsmenu">
+      <div class="menu">
+        <img src="lunaros.gif"> 
+        <p> v0.3 </p>
+        <p2> (!) This build is not finalized so any bugs or issues may be resigned in the future </p2>
+        <h1> Theme </h1>
+        <h2>Background Color: </h2><input type="color" id="theme" value="#ffffff">
+        <h2>Text Color: </h2><input type="color" id="txttheme" value="#ffffff">
+  </div>
+
+</div>
+</body>
+</html>
+<script type="text/javascript">
+  let theme = document.getElementById('theme')
+
+  theme.addEventListener('change', (e) => {
+    console.log(e.target.value)
+    document.documentElement.style.setProperty('--color', e.target.value)
+  })
+  let txttheme = document.getElementById('txttheme')
+
+  txttheme.addEventListener('change', (e) => {
+    console.log(e.target.value)
+    document.documentElement.style.setProperty('--font-color', e.target.value)
+  })
+  function startTime() {
+  const today = new Date();
+  let h = today.getHours();
+  let m = today.getMinutes();
+  let s = today.getSeconds();
+  m = checkTime(m);
+  s = checkTime(s);
+  document.getElementById('txt').innerHTML =  h + ":" + m + ":" + s;
+  setTimeout(startTime, 1000);
+}
+
+function checkTime(i) {
+  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+  return i;
+}
+</script>
