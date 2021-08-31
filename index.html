@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
   <title>Lunar OS</title>
@@ -9,24 +10,33 @@
     --font-color: #000000;
   }
   body {
-    background-image: url("bg.png");
+    background-image: url("bg.gif");
     background-size: cover;
     text-align: center;
     font-family: 'Poppins', sans-serif;
   }
   * { cursor: url(cursor.png), default; }
   .info {
-    background: rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.2);
     border-radius: 10px;
     padding: 7px;
     position: absolute;
     color: white;
+    backdrop-filter: blur(5px) saturate(100%);
+
+  }
+  .date {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    position: absolute;
+    color: white;
   }
   .taskbar {
-    background: rgba(0,0,0, 0.2);
+    background-color: rgba(255, 255, 255, 0.2);
     border-radius: 25px;
     padding: 7px;
     position: absolute;
+    backdrop-filter: blur(5px) saturate(100%);
   }
 
 .dropbtn {
@@ -34,8 +44,10 @@
   color: white;
   padding: 30px;
   border: none;
+  box-shadow: insent 0, 0, 0, 0, #000000;
   border-radius: 20px;
   opacity: 100%;
+  transition: ease-out;
 }
 
 .dropup {
@@ -74,6 +86,11 @@
   border: none;
   border-radius: 20px;
   opacity: 100%;
+  transition: ease-out;
+}
+
+.browserbtn {
+  box-shadow: insent 0, 0, 0, 0, #000000;
 }
 
 .browser {
@@ -103,6 +120,7 @@
 
 .browser:hover .browsercont {
   display: block;
+  box-shadow: insent 100px, 0, 0, 0, #000000;
   opacity: 100%;
 }
 
@@ -114,6 +132,12 @@
   border-radius: 20px;
   opacity: 100%;
   max-height: 500px;
+  box-shadow: insent 0, 0, 0, 0, #000000;
+  transition: ease-out;
+}
+
+.settingsbtn {
+  box-shadow: insent 100px, 0, 0, 0, #000000;
 }
 
 .settings {
@@ -153,13 +177,226 @@
   display: block;
   opacity: 100%;
 }
+
+.filebtn {
+  background-image: url("files.png");
+  color: white;
+  padding: 30px;
+  border: none;
+  border-radius: 20px;
+  opacity: 100%;
+  max-height: 500px;
+  box-shadow: insent 0, 0, 0, 0, #000000;
+  transition: ease-out;
+}
+
+.filebtn {
+  box-shadow: insent 100px, 0, 0, 0, #000000;
+}
+
+.fileapp {
+  position: relative;
+  display: inline-block;
+  opacity: 100%;
+}
+
+.filecontents {
+  font-family: 'Poppins', sans-serif;
+  display: none;
+  position: absolute;
+  background-color: var(--color);
+  min-width: 500px;
+  min-height: 500px;
+  z-index: 1;
+  text-align: center;
+  border-radius: 10px;
+  opacity: 100%;
+  color: var(--font-color)
+}
+.filecontents p {
+  font-size: 30px;
+  opacity: 100%;
+}
+
+.filecontents b {
+  font-family: 'Poppins', sans-serif;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  opacity: 100%;
+}
+
+.fileapp:hover .filecontents {
+  display: block;
+  opacity: 100%;
+}
+.calcbt {
+  background-image: url("calc.png");
+  color: white;
+  padding: 30px;
+  border: none;
+  border-radius: 20px;
+  opacity: 100%;
+  max-height: 500px;
+  box-shadow: insent 0, 0, 0, 0, #000000;
+  transition: ease-out;
+}
+
+.calcbt {
+  box-shadow: insent 100px, 0, 0, 0, #000000;
+}
+
+.calc {
+  position: relative;
+  display: inline-block;
+  opacity: 100%;
+}
+
+.calculator {
+  font-family: 'Poppins', sans-serif;
+  display: none;
+  position: absolute;
+  background-color: var(--color);
+  min-width: 500px;
+  min-height: 500px;
+  z-index: 1;
+  text-align: center;
+  border-radius: 10px;
+  opacity: 100%;
+  color: var(--font-color)
+}
+.calculator p {
+  font-size: 30px;
+  opacity: 100%;
+}
+
+.calculator b {
+  font-family: 'Poppins', sans-serif;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  opacity: 100%;
+}
+
+.calc:hover .calculator {
+  display: block;
+  opacity: 100%;
+}
+button {
+  border: none;
+  border-radius: 10px;
+  background-color: white;
+  color: black;
+}
 input {
+  border: none;
+  border-radius: 10px;
+  background-color: white;
+  color: black;
+}
+.todo_list {
+  backdrop-filter: blur(5px) saturate(100%);
+  right: 30%;
+  background-color: rgba(255, 255, 255, 0.2);
+  min-width: 300px;
+  max-width: 300px;
+  text-align: right;
+  color: black;
+  border-radius: 10px;
+  position: absolute; 
+  padding: 5px;
+  border: none;
+  padding: 10px;
+}
+.fileapp input {
   border: none;
 }
 
+img {
+  height: 75px;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+
 </style>
 </head>
+
+<div class="calender">
+  
+    <div class="calendar">
+        <div class="calendar-header">
+            <span class="month-picker" id="month-picker">February</span>
+            <div class="year-picker">
+                <span class="year-change" id="prev-year">
+                    <pre><</pre>
+                </span>
+                <span id="year">2021</span>
+                <span class="year-change" id="next-year">
+                    <pre>></pre>
+                </span>
+            </div>
+        </div>
+        <div class="calendar-body">
+            <div class="calendar-week-day">
+                <div>Sun</div>
+                <div>Mon</div>
+                <div>Tue</div>
+                <div>Wed</div>
+                <div>Thu</div>
+                <div>Fri</div>
+                <div>Sat</div>
+            </div>
+            <div class="calendar-days"></div>
+        </div>
+        <div class="month-list"></div>
+    </div>
+</div>
+<div class="todo_list">
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>To Do List</title>
+</head>
+
 <body>
+  </section>
+    <h1>To Do List</h1>
+    <div class="container">
+        <input id="inputField" type="text"><button id="addToDo">+</button>
+        <div class="to-dos" id="toDoContainer">
+        </div>
+    </div>
+    <script>
+      let addToDoButton = document.getElementById('addToDo');
+let toDoContainer = document.getElementById('toDoContainer');
+let inputField = document.getElementById('inputField');
+
+addToDoButton.addEventListener('click', function(){
+    var paragraph = document.createElement('p');
+    paragraph.classList.add('paragraph-styling');
+    paragraph.innerText = inputField.value;
+    toDoContainer.appendChild(paragraph);
+    inputField.value = "";
+    paragraph.addEventListener('click', function(){
+        paragraph.style.textDecoration = "line-through";
+    })
+    paragraph.addEventListener('dblclick', function(){
+        toDoContainer.removeChild(paragraph);
+    })
+})
+    </script>
+    <style type="text/css">
+</style>
+</body>
+</html>
+<div id="dycalendar"></div>
+</div>
+  <div class="date">
+    <p id="date"></p>
+  </div>
   <div class="info">
     <body onload="startTime()">
     <div id="txt">
@@ -167,30 +404,56 @@ input {
   </div>
   <br>
   <br>
+
   <div class="taskbar">
     <div class="dropup">
       <button class="dropbtn"> </button>
       <div class="dropup-content">
         <iframe src="art.html" width="500" height="500"heigh></iframe>
   </div>
+  <div class="calc">
+      <button class="calcbt"> </button>
+      <div class="calculator">
+        <iframe src="calc.html" width="500" height="500"heigh></iframe>
+  </div>
     <div class="browser">
   <button class="browserbtn"> </button>
   <div class="browsercont">
-      <iframe src="https://www.google.com/webhp?igu=1" width="500" height="500"heigh></iframe>
+      <iframe src="https://www.google.com/webhp?igu=1" width="700" height="600"heigh></iframe>
   </div>
-    <div class="settings">
+      <div class="fileapp">
+  <button class="filebtn"> </button>
+  <div class="filecontents">
+    <div class="container">
+      <br><br>
+      <form id="form" enctype="multipart/form-data" method="post">
+        <div class="form-group">
+          <input type="file" class="form-control" id="image">
+        </div>
+        <div class="form-group">
+          <button>Upload</button>
+    </div>
+    </form>
+    <button onclick="remove()">Delete all photos</button>
+    <div id="result">
+    </div>
+    </div>
+  </div>
+  <div class="settings">
   <button class="settingsbtn"> </button>
   <div class="settingsmenu">
       <div class="menu">
         <img src="lunaros.gif"> 
-        <p> v0.3 </p>
+        <p> v2.0 </p>
         <p2> (!) This build is not finalized so any bugs or issues may be resigned in the future </p2>
         <h1> Theme </h1>
         <h2>Background Color: </h2><input type="color" id="theme" value="#ffffff">
         <h2>Text Color: </h2><input type="color" id="txttheme" value="#ffffff">
   </div>
 
-</div>
+<script type="text/javascript" src="vanilla-tilt.js">
+  
+</script>
 </body>
 </html>
 <script type="text/javascript">
@@ -221,4 +484,159 @@ function checkTime(i) {
   if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
   return i;
 }
+  VanillaTilt.init(document.querySelector(".todo_list"), {
+    max: 25,
+    speed: 400
+  });
+
+  VanillaTilt.init(document.querySelector(".info"), {
+    max: 25,
+    speed: 400
+  });
+  var form = document.getElementById('form')
+
+  var parentDiv = document.getElementById('result')
+
+  form.addEventListener('submit',function(event) {
+    event.preventDefault()
+
+    var reader = new FileReader()
+
+    var name = document.getElementById("image").files[0].name
+
+    reader.addEventListener('load', function() {
+      if(this.result && localStorage) {
+        window.localStorage.setItem(name,this.result)
+        alert("Image saved.")
+        parentDiv.innerHTML = ''
+        showImages()
+      }
+      else {
+        alert("Image was not saved.")
+      }
+    })
+
+    reader.readAsDataURL(document.getElementById('image').files[0])
+
+    console.log(name)
+
+  })
+
+    function showImages() {
+    for (let i = 0;i < window.localStorage.length; i++){
+      let res = window.localStorage.getItem(window.localStorage.key(i))
+      var image  = new Image()
+      image.src = res;
+
+      parentDiv.appendChild(image)
+
+    }
+  }
+
+  function remove() {
+    window.localStorage.clear()
+    showImages()
+    parentDiv.innerHTML = ''
+  }
+
+  showImages()
+  let calendar = document.querySelector('.calendar')
+
+const month_names = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+
+isLeapYear = (year) => {
+    return (year % 4 === 0 && year % 100 !== 0 && year % 400 !== 0) || (year % 100 === 0 && year % 400 ===0)
+}
+
+getFebDays = (year) => {
+    return isLeapYear(year) ? 29 : 28
+}
+
+generateCalendar = (month, year) => {
+
+    let calendar_days = calendar.querySelector('.calendar-days')
+    let calendar_header_year = calendar.querySelector('#year')
+
+    let days_of_month = [31, getFebDays(year), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+
+    calendar_days.innerHTML = ''
+
+    let currDate = new Date()
+    if (!month) month = currDate.getMonth()
+    if (!year) year = currDate.getFullYear()
+
+    let curr_month = `${month_names[month]}`
+    month_picker.innerHTML = curr_month
+    calendar_header_year.innerHTML = year
+
+    // get first day of month
+    
+    let first_day = new Date(year, month, 1)
+
+    for (let i = 0; i <= days_of_month[month] + first_day.getDay() - 1; i++) {
+        let day = document.createElement('div')
+        if (i >= first_day.getDay()) {
+            day.classList.add('calendar-day-hover')
+            day.innerHTML = i - first_day.getDay() + 1
+            day.innerHTML += `<span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>`
+            if (i - first_day.getDay() + 1 === currDate.getDate() && year === currDate.getFullYear() && month === currDate.getMonth()) {
+                day.classList.add('curr-date')
+            }
+        }
+        calendar_days.appendChild(day)
+    }
+}
+
+let month_list = calendar.querySelector('.month-list')
+
+month_names.forEach((e, index) => {
+    let month = document.createElement('div')
+    month.innerHTML = `<div data-month="${index}">${e}</div>`
+    month.querySelector('div').onclick = () => {
+        month_list.classList.remove('show')
+        curr_month.value = index
+        generateCalendar(index, curr_year.value)
+    }
+    month_list.appendChild(month)
+})
+
+let month_picker = calendar.querySelector('#month-picker')
+
+month_picker.onclick = () => {
+    month_list.classList.add('show')
+}
+
+let currDate = new Date()
+
+let curr_month = {value: currDate.getMonth()}
+let curr_year = {value: currDate.getFullYear()}
+
+generateCalendar(curr_month.value, curr_year.value)
+
+document.querySelector('#prev-year').onclick = () => {
+    --curr_year.value
+    generateCalendar(curr_month.value, curr_year.value)
+}
+
+document.querySelector('#next-year').onclick = () => {
+    ++curr_year.value
+    generateCalendar(curr_month.value, curr_year.value)
+}
+
+let dark_mode_toggle = document.querySelector('.dark-mode-switch')
+
+dark_mode_toggle.onclick = () => {
+    document.querySelector('body').classList.toggle('light')
+    document.querySelector('body').classList.toggle('dark')
+}
+
+  VanillaTilt.init(document.querySelector(".calender"), {
+    max: 25,
+    speed: 400
+  });
+
 </script>
+<link rel="stylesheet" type="text/css" href="calender.css">
