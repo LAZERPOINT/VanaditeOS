@@ -237,7 +237,7 @@ iframe {
   min-width: 500px;
   min-height: 500px;
   z-index: 1;
-  text-align: center;
+  text-align: left;
   border-radius: 10px;
   opacity: 100%;
   color: var(--font-color)
@@ -627,8 +627,8 @@ addToDoButton.addEventListener('click', function(){
   <div class="settingsmenu">
       <div class="menu">
         <img src="vanos.png"> 
-        <p> v4.0.1 </p>
-        <p2> For the new optomized version, go to https://lazerpoint.github.io/VanaditeOS-Lite (Updates will still come out, just not as much) </p2>
+        <p> v4.1 </p>
+        <p2> For the new optomized version, go to vanaditeos.netlify.app (Updates will still come out, just not as much) </p2>
         <h1> Theme </h1>
         <h2>Background Color: </h2><input type="color" id="theme" value="#ffffff">
         <h2>Text Color: </h2><input type="color" id="txttheme" value="#ffffff">
@@ -668,10 +668,6 @@ function checkTime(i) {
   if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
   return i;
 }
-  VanillaTilt.init(document.querySelector(".todo_list"), {
-    max: 25,
-    speed: 400
-  });
 
   var form = document.getElementById('form')
 
@@ -812,11 +808,6 @@ dark_mode_toggle.onclick = () => {
     document.querySelector('body').classList.toggle('light')
     document.querySelector('body').classList.toggle('dark')
 }
-
-  VanillaTilt.init(document.querySelector(".calender"), {
-    max: 25,
-    speed: 400
-  });
 
 
 </script>
